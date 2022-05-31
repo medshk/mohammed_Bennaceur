@@ -1,0 +1,29 @@
+@import "/src/styles/global.scss";
+@import "/src/styles/mixins.scss";
+
+.product-price {
+  $self: &;
+
+ 
+  &__price {
+    display: block;
+    padding: toRem(3.5) 0;
+    @include font_style(4, 600, 16);
+  }
+
+  &--big {
+    font-weight: 700;
+    #{ $self }__title {
+      margin-top: toRem(32);
+      font-family: $font-roboto;
+      font-size: toRem(18);
+      font-weight: inherit;
+    }
+    #{ $self }__price {
+      padding: 0;
+      margin-top: toRem(14);
+      font-size: toRem(24);
+      font-weight: inherit;
+    }
+  }
+}

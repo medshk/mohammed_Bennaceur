@@ -1,0 +1,92 @@
+@import "/src/styles/global.scss";
+@import "/src/styles/mixins.scss";
+
+.bag {
+	position: relative;
+	/* keep refrence of bag parent node*/
+	$self: &;
+  
+
+	&__button {
+		background-color: #fff;
+		border-width: 0;
+		margin-left: toRem(22);
+		transform: translateY(-1px);
+    position: relative;
+
+    & span {
+      position: absolute;
+      top: toRem(-8);
+      right: toRem(-8);
+      width: toRem(20);
+      height: toRem(20);
+      font-family: $font-roboto;
+      font-weight: 700;
+      font-size: toRem(14);
+      line-height: 20px;
+      color: #fff;
+      background-color: $black;
+      text-align: center;
+      border-radius: 50%;
+    }
+	}
+
+	&__items-number {
+		font-family: $font-raleway;
+		font-weight: 700;
+		font-size: 1rem;
+		padding: toRem(3.5) 0;
+		color: $black;
+		& span {
+			font-weight: 500;
+		}
+	}
+
+	&__drop-down {
+		position: fixed;
+		height: toRem(500);
+		right: toRem(72);
+		background-color: #fff;
+		padding: 2rem 1rem;
+    overflow: auto;
+
+    #{ $self }__content {
+      width: fit-content;
+    }
+
+		#{ $self }__payment {
+			display: flex;
+			font-family: $font-roboto;
+			font-weight: 500;
+			font-size: 1rem;
+      margin-top: toRem(43);
+
+			#{ $self }__total-price {
+				margin-left: auto;
+			}
+		}
+
+		#{ $self }__action {
+			margin-top: 2rem;
+			display: flex;
+
+			& .btn {
+				box-shadow: none;
+        font-family: $font-raleway;
+        font-weight: 600;
+        font-size: toRem(14);
+        text-transform: uppercase;
+        line-height: 0;
+
+				&--checkout {
+					@include submit-button-style(140, 43);
+          margin-left: auto;
+				}
+
+        &--viewBag {
+          @include normal-button-style(140, 43);
+        }
+			}
+		}
+	}
+}

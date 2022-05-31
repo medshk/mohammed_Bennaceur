@@ -1,0 +1,26 @@
+@import "/src/styles/mixins.scss";
+@import "/src/styles/global.scss";
+
+.size-radio {
+  @include font_style(8, 400, 14);
+  $self: &;
+  &__content {
+    font-size: toRem(14);
+    @include input-radio_style(8, 8, 22, 22, size);
+  }
+
+  &--big {
+    margin-top: toRem(14);
+    #{ $self }__title {
+      font-family: $font-roboto;
+      font-size: toRem(18);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    #{ $self }__content {
+      font-size: toRem(16);
+      @include input-radio_style(7, 8, 61, 43, size);
+    }
+
+  }
+}

@@ -1,0 +1,45 @@
+@import "/src/styles/global.scss";
+@import "/src/styles/mixins.scss";
+
+.cart {
+  margin: toRem(80) toRem(100);
+
+  &__title {
+    font-family: $font-raleway;
+    font-weight: 700;
+    font-size: toRem(32);
+    color: $black;
+    text-transform: uppercase;
+  }
+
+  &__bag{
+    margin-top: toRem(55);
+  }
+  &_action {
+    margin-top: toRem(57);
+    font-size: toRem(24);
+    font-family: $font-raleway;
+    line-height: 1.4;
+    display: flex;
+
+    & label {
+      font-weight: 400;
+    }
+
+    & span {
+      font-weight: 700;
+    }
+  }
+
+  &-column1,&-column2 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__submit-btn {
+    margin-top: 1rem;
+    @include  submit-button-style(279,43)
+  }
+
+
+}

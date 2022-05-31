@@ -1,0 +1,57 @@
+@import  '/src/styles/global.scss';
+
+.header {
+ padding-top: toRem(24);
+ margin-right: toRem(101);
+ margin-left: toRem(101);
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: toRem(56);
+  }
+
+  &__nav {
+    height: inherit;
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+
+  }
+
+  &__link{
+    font-family: $font-raleway;
+    font-size: 1rem;
+    font-weight: 400;
+    color: $black;
+    text-transform: uppercase;
+    transform: translateY(4px);
+    color: $black;
+  }
+
+  &__link--active {
+    color: $clr-primary;
+    font-weight: 600;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: $clr-primary;
+      height: 2px;
+      right: -1rem;
+      left: -1rem;
+      bottom: toRem(-34);
+    }
+  }
+
+  &__logo {
+    transform: translateY(2px);
+  }
+
+  &-buttons-wrapper {
+    display: flex;
+    align-items: flex-end;
+  }
+
+}

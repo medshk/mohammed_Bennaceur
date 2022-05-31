@@ -1,0 +1,16 @@
+/* color */
+$clr-primary: #5ECE7B;
+$ligh-gray:#EEEEEE;
+$black: #1D1F22;
+$lightest-gray: #E5E5E5;
+
+/* typography */
+$font-raleway: 'Raleway', sans-serif;
+$font-roboto: 'Roboto', sans-serif;
+$font-source: 'Source Sans Pro', sans-serif;
+
+// functions
+@function toRem($value) {
+  $remValue: ($value / 16) + rem; 
+  @return $remValue;
+}

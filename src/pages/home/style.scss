@@ -1,0 +1,24 @@
+@import "/src/styles/global.scss";
+.home {
+
+  &-container {
+    margin: 0 auto;
+    width: fit-content;
+  }
+  &__category {
+    margin-top: toRem(80);
+    font-family: $font-raleway;
+    font-weight: 400;
+    font-size: toRem(48);
+    color: $black;
+    text-transform: capitalize;
+  }
+  &-grid {
+    margin: toRem(103) 0;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: toRem(103) toRem(40);
+    place-items: center;
+    width: fit-content;
+  }
+}

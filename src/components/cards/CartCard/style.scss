@@ -1,0 +1,36 @@
+@import "/src/styles/global.scss";
+@import "src/styles/mixins.scss";
+
+.productCart {
+  @include productCart_style(32);
+  text-transform: capitalize;
+	$self: &;
+
+  &-column-one {
+    @include column-one_style;
+  }
+  &-column-two {
+    @include column-two_style;
+    height: toRem(190);
+  }
+
+  /* class for small dimension product cart */
+	&--big {
+    @include productCart_style(0);
+    padding-bottom: toRem(24);
+    border-top: 1px solid $lightest-gray;
+
+    &:last-child {
+      border-bottom: 1px solid $lightest-gray;
+    }
+		/* column two*/
+		#{ $self }-column-two {
+      margin-top: toRem(24);
+			height: toRem(288);
+		}
+    #{ $self }-column-one {
+      margin-top: toRem(24);
+		}
+	}
+
+}

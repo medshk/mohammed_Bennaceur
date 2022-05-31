@@ -1,0 +1,50 @@
+@import '/src/styles/global.scss';
+.select {
+  position: relative;
+  font-family: $font-raleway;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: $black;
+
+  &__btn {
+    background-color: #fff;
+    border-width: 0;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    color: inherit;
+    position: relative;
+    padding: toRem(4) toRem(0) toRem(4) toRem(10);
+
+    & img {
+      margin-left: toRem(10);
+      transform: translateY(-1px);
+    }
+  }
+
+  &__list {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    width: max-content;
+    height: toRem(169);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: toRem(8.5);
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 5rem;
+    left: toRem(-10);
+    z-index: 15;
+  }
+  &__item {
+    height: toRem(45);
+    line-height: toRem(45);
+    padding-left: toRem(20);
+    padding-right: toRem(40);
+
+    &:nth-child(even) {
+      background-color: $ligh-gray;
+    }
+  }
+}

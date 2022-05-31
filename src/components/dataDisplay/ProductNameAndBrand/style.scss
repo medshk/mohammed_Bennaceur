@@ -1,0 +1,30 @@
+@import "/src/styles/global.scss";
+@import "/src/styles/mixins.scss";
+
+.product-info {
+  padding: toRem(3.5) 0;
+  font-weight: 300;
+  font-size: 1rem;
+  $self: &;
+  text-transform: capitalize;
+
+  &__brand {
+    margin-bottom: toRem(4);
+    font-weight: inherit;
+  }
+
+  &--big {
+    padding: 0;
+    font-size: toRem(28);
+    #{ $self }__brand {
+      font-weight: 600;
+    
+    }
+    #{ $self }__name {
+      margin-top: toRem(8);
+      font-weight: 400;
+     
+    }
+
+  }
+}

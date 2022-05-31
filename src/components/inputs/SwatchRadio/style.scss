@@ -1,0 +1,24 @@
+@import "/src/styles/mixins.scss";
+@import "/src/styles/global.scss";
+
+.color-radio {
+  $self: &;
+	@include font_style(8, 400, 14);
+	&__content {
+		@include input-radio_style(8, 8, 16, 16, color);
+	}
+  &--big {
+    margin-top: toRem(8);
+    margin-bottom: 0;
+    #{ $self }__title {
+      font-family: $font-roboto;
+      font-size: toRem(18);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    #{ $self }__content {
+      @include input-radio_style(10, 8, 32, 32, color);
+    }
+
+  }
+}

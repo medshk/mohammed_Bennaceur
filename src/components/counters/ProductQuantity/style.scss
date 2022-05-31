@@ -1,0 +1,10 @@
+@import "/src/styles/global.scss";
+@import "/src/styles/mixins.scss";
+
+.product-quantity {
+  @include quantity_style(24, 24, 16);
+
+  &--big {
+    @include quantity_style(43, 43, 24);
+  }
+}
