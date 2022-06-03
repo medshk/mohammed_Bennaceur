@@ -20,11 +20,11 @@ export default class SwatchRadio extends Component {
 
 	render() {
 		const { name, items } = this.props.content;
-    	// using id prop to diffrentiate between input radio in cart page 
-    // of the same product but with diffrent item's attribute
+		// using id prop to diffrentiate between input radio in cart page
+		// of the same product but with diffrent item's attribute
 		const id = this.props.id ? this.props.id : "";
-    // using size props to diffrentiate between input radio in cart page and bag
-    const size = this.props.size 
+		// using size props to diffrentiate between input radio in cart page and bag
+		const size = this.props.size;
 		return (
 			<div
 				className={`color-radio ${this.props.size ? "color-radio--big" : ""}`}
@@ -39,11 +39,13 @@ export default class SwatchRadio extends Component {
 								value={item.value}
 								id={`${id}${item.id}${size}`}
 								onChange={() =>
-									this.handleChange({
-										id: item.id,
-										name,
-										value: item.value,
-									})
+									this.props.size
+										? this.handleChange({
+												id: item.id,
+												name,
+												value: item.value,
+										  })
+										: ""
 								}
 								checked={this.selectedItem(item.value, index)}
 							/>

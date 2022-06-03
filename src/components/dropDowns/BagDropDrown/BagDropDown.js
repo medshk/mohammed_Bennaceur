@@ -22,7 +22,7 @@ export default class BagDropDown extends Component {
 		// hide select list when user click away
 		window.onclick = (e) => {
 			if (
-				e.target === this.dropRef.current &&
+        !this.dropRef.current.contains(e.target) &&
 				this.state.isOpen &&
 				e.target !== this.btnRef.current
 			) {
@@ -47,13 +47,12 @@ export default class BagDropDown extends Component {
 					<img src={bag} alt="bag icon" ref={this.btnRef} />
 					<span>{quantity}</span>
 				</button>
-				<BagModal isOpen={this.state.isOpen} reff={this.dropRef}>
-					<div className="bag__drop-down">
+				<BagModal isOpen={this.state.isOpen} >
+					<div className="bag__drop-down" ref={this.dropRef}>
 						<p className="bag__items-number">
 							My Bag,<span> {quantity} items</span>
 						</p>
 						<div className="bag__content">
-							{/* <p className="empty-bag">Bag empty</p> */}
 							{cart.map((item) => (
 								<CartCard product={item} key={item.id} />
 							))}

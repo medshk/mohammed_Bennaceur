@@ -8,6 +8,7 @@ import { GET_PRODUCT } from "../../graphql/schema";
 import TextRadio from "../../components/inputs/TextRadio";
 import SwatchRadio from "../../components/inputs/SwatchRadio";
 import CartContext from "../../contexts/CartContext";
+import parse from 'html-react-parser';
 
 export class Product extends Component {
 	static contextType = CartContext;
@@ -174,10 +175,11 @@ export class Product extends Component {
 								>
 									{inStock ? "add to cart" : "out of stock"}
 								</button>
-								<p
+								<div
 									className="product__description"
-									dangerouslySetInnerHTML={{ __html: description }}
-								/>
+								>
+                  {parse(description)}
+                  </div>
 							</div>
 						</div>
 					);

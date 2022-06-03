@@ -13,9 +13,7 @@ export default class BagModal extends Component {
 	render() {
 		return createPortal(
 			<div
-				ref={this.props.reff}
-				className="modal"
-				style={this.props.isOpen ? { display: "block" } : { display: "none" }}
+				className={`modal ${this.props.isOpen ? "modal--open" : "modal--close"}`}
 			>
 				{this.props.children}
 			</div>,

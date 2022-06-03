@@ -18,7 +18,7 @@ export default class Home extends Component {
 						<Query
 							query={GET_PRODUCTS_BY_CATEGORY}
 							variables={{ input:{title: categoryName} }}
-							fetchPolicy="network-only"
+							fetchPolicy="no-cache"
 						>
 							{({ loading, error, data }) => {
 								if (loading) return "Loading...";

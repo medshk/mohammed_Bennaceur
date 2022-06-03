@@ -25,7 +25,7 @@
   &__list {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     width: max-content;
-    height: toRem(169);
+    //height: toRem(169);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -33,7 +33,7 @@
     padding: 0;
     margin: 0;
     position: absolute;
-    top: 5rem;
+    top: 2rem;
     left: toRem(-10);
     z-index: 15;
   }
@@ -43,7 +43,7 @@
     padding-left: toRem(20);
     padding-right: toRem(40);
 
-    &:nth-child(even) {
+    &:hover {
       background-color: $ligh-gray;
     }
   }

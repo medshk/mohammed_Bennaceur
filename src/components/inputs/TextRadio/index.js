@@ -26,7 +26,6 @@ export default class TextRadio extends Component {
 		return (
 			<div
 				className={`size-radio ${this.props.size ? "size-radio--big" : ""}`}
-				style={this.props.size ? { marginTop: "43px" } : {}}
 			>
 				<p className="size-radio__title">{name}:</p>
 				<div className="size-radio__content">
@@ -38,11 +37,12 @@ export default class TextRadio extends Component {
 								value={item.value}
 								id={`${id}${item.id}${name}${size}`}
 								onChange={() =>
-									this.handleChange({
+                  this.props.size
+									 ? this.handleChange({
 										id: item.id,
 										name,
 										value: item.value,
-									})
+									}) : ""
 								}
 								checked={this.selectedItem(item.value, index)}
 							/>

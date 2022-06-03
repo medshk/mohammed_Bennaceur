@@ -2,7 +2,7 @@
 .home {
 
   &-container {
-    margin: 0 auto;
+    margin: 0 toRem(100);
     width: fit-content;
   }
   &__category {

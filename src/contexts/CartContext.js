@@ -30,7 +30,6 @@ export class CartProvider extends Component {
 
   // update cart state
 	setCart = (cart) => {
-    // console.log("carted")
 
 		localStorage.setItem(
 			"cart",

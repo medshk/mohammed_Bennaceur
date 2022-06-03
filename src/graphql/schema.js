@@ -10,6 +10,16 @@ export const GET_PRODUCTS_BY_CATEGORY = gql`
 				inStock
 				gallery
 				brand
+				attributes {
+					id
+					name
+					type
+					items {
+						displayValue
+						value
+						id
+					}
+				}
 				prices {
 					amount
 					currency {
@@ -31,39 +41,39 @@ export const GET_ALL_CURRENCIES = gql`
 `;
 
 export const GET_PRODUCT = gql`
-  query getProduct($productId: String!) {
-    product(id: $productId) {
-    id
-    name
-    inStock
-    gallery
-    description
-    category
-    attributes {
-      id
-      name
-      type
-      items {
-        displayValue
-        value
-        id
-      }
-    }
-    brand
-    prices {
-      currency {
-        label
-        symbol
-      }
-      amount
-    }
-  }
-}
-  `;
+	query getProduct($productId: String!) {
+		product(id: $productId) {
+			id
+			name
+			inStock
+			gallery
+			description
+			category
+			attributes {
+				id
+				name
+				type
+				items {
+					displayValue
+					value
+					id
+				}
+			}
+			brand
+			prices {
+				currency {
+					label
+					symbol
+				}
+				amount
+			}
+		}
+	}
+`;
 export const GET_CATEGORIES_NAME = gql`
-  query getCategoriesName {
-  categories {
-    name
-  }
-}
-`
+	query getCategoriesName {
+		categories {
+			name
+		}
+	}
+`;
