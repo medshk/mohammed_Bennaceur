@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import ProductNameAndBrand from "../../components/dataDisplay/ProductNameAndBrand";
-import ProductPrice from "../../components/dataDisplay/ProductPrice";
+import { ProductNameAndBrand , ProductPrice , ProductGallery } from "../../components/dataDisplay"
 import { withApollo } from "react-apollo";
 import "./style.scss";
 import { Query } from "react-apollo";
@@ -123,16 +122,7 @@ export class Product extends Component {
 					} = data.product ? data.product : {} ;
 					if(Object.keys(data).length !== 0) return (
 						<div className="product">
-							<div className="product-column1">
-								{gallery.map((image) => (
-									<div className="product__image" key={image}>
-										<img src={image} alt="" />
-									</div>
-								))}
-							</div>
-							<div className="product-column2">
-								<img src={gallery[0]} alt="product" />
-							</div>
+              <ProductGallery gallery={gallery}/>
 							<div className="product-column3">
 								<ProductNameAndBrand size="big" content={{ name, brand }} />
 								{attributes.sort((a,b) => {

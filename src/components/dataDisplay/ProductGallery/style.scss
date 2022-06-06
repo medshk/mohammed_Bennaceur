@@ -1,0 +1,31 @@
+@import "/src/styles/global.scss";
+@import "/src/styles/mixins.scss";
+
+.product-gallery {
+  display: flex;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    margin-right: toRem(50);
+    overflow: scroll;
+    max-height: toRem(511);
+  }
+
+  &__item {
+    margin-bottom: toRem(40);
+    width: toRem(79);
+    height: toRem(80);
+    opacity: 0.5;
+    transition: all 250ms;
+    &--selected {
+      opacity: 1;
+    }
+  }
+
+  &__selected-img {
+    margin-right: toRem(100);
+    width: toRem(610);
+    height: toRem(511);
+  }
+}
