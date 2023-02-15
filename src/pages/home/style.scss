@@ -2,11 +2,24 @@
 .home {
 
   &-container {
-    margin: 0 auto;
-    width: fit-content;
+    margin-top: toRem(80);
+   
+   width: fit-content;
+    display: flex;
+    
+  }
+
+  &-columnOne {
+  margin-top: toRem(210);
+  margin-left: 5rem;
+    padding: 1rem;
+  }
+  
+  &-columnTwo {
+    margin-left: 10rem;
   }
   &__category {
-    margin-top: toRem(80);
+    
     font-family: $font-raleway;
     font-weight: 400;
     font-size: toRem(48);

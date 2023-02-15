@@ -1,0 +1,33 @@
+.filter__select {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  & select,
+  &-unselect-btn {
+    all: unset;
+    margin-left: 0.4rem;
+    padding: 0.5rem;
+    border: 1px solid lightgray;
+  }
+
+  &-unselect-btn {
+    font-weight: bold;
+
+    color: rgb(255, 255, 255);
+    background-color: rgb(88, 232, 132);
+  }
+  & select:focus,
+  & select:hover {
+    background-color: lightgray;
+  }
+
+  &-unselect-btn:focus,
+  &-unselect-btn:hover {
+    background-color: rgb(68, 217, 113);
+  }
+
+  &-unselect-btn:active {
+    background-color: rgb(50, 165, 85);
+  }
+}

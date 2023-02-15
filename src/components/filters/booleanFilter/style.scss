@@ -1,0 +1,10 @@
+@import "/src/styles/mixins.scss";
+@import "/src/styles/global.scss";
+
+.filter__boolean {
+    margin-top: 1.5rem;
+    &-content {
+        font-size: toRem(14);
+        @include input-radio_style(8, 8, 32,32, size);
+      }
+}

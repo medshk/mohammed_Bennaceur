@@ -1,0 +1,12 @@
+@import "/src/styles/mixins.scss";
+@import "/src/styles/global.scss";
+
+.filter {
+  margin-top: 8rem;
+
+  &__title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+}
